@@ -1,0 +1,15 @@
+@import "tailwindcss";
+* {
+    font-family: "Quicksand", sans-serif;
+}
+:root {
+  --primary-color: #3BB77E;
+  --grey-color: #f3f3f3;
+  --second-grey-color: #838383;
+  --placeholder-color: #ADADAD;
+  --black-color: #253D4E;
+  --full-black-color: #000000;
+
+  
+  --section-y-padding: 97px;
+}
