@@ -1,23 +1,44 @@
-import React from 'react'
+import React from 'react';
 import { PiPaperPlaneTilt } from "react-icons/pi";
 
 const Banner = () => {
   return (
-    <div className='w-full h-[500px] bg-[url("/hero-bg.png")] bg-cover bg-center text-white flex items-center justify-center relative'>
-        <div className='w-auto h-full absolute top-0 right-0 z-0'>
-            <img src="/hero-img.png" alt="" className='w-auto h-full object-cover ' />
-        </div>
-        <div className='z-10 w-full h-full container mx-auto flex flex-col items-start justify-center gap-8'>
-            <h1 className='w-1/2 text-[55px] font-bold text-[var(--black-color)]'>Don’t miss our daily amazing deals.</h1>
-            <p className='text-[20px] font-medium text-[var(--second-grey-color)]'>Save up to 60% off on your first order</p>
-            <div className='flex items-center gap-2  bg-white '>
-                <span className='p-3 text-[var(--placeholder-color)]'><PiPaperPlaneTilt className='size-5'/></span>
-                <input type="email" placeholder='Enter your email address' className='placeholder:text-[var(--placeholder-color)] outline-none text-[var(--black-color)] text-[14px] w-60 '  />
-                <button className='bg-[var(--primary-color)] text-white px-5 py-3 cursor-pointer'>Subscribe</button>
-            </div>
-        </div>
-    </div>
-  )
-}
+    <div className="relative w-full bg-[url('/hero-bg.png')] bg-cover bg-center text-white">
+      {/* Hero Image - only visible on medium+ screens to avoid clutter on mobile */}
+      <div className="absolute top-0 right-0 w-1/2 h-full hidden md:block">
+        <img
+          src="/hero-img.png"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-export default Banner
+      {/* Content */}
+      <div className="container mx-auto relative z-10 px-4 py-12 md:py-20 flex flex-col items-start justify-center min-h-[400px] md:min-h-[500px]">
+        <h1 className="text-[32px] md:text-[48px] lg:text-[55px] font-bold text-[var(--black-color)] max-w-full md:max-w-1/2 leading-tight">
+          Don’t miss our daily amazing deals.
+        </h1>
+        <p className="mt-3 text-[16px] md:text-[20px] font-medium text-[var(--second-grey-color)] max-w-full md:max-w-1/2">
+          Save up to 60% off on your first order
+        </p>
+
+        {/* Email Subscribe Form */}
+        <div className="mt-6 w-full md:w-auto flex flex-col sm:flex-row items-start sm:items-center gap-2 bg-white p-1 rounded">
+          <div className="flex items-center px-3 py-2 bg-gray-100">
+            <PiPaperPlaneTilt className="size-5 text-[var(--placeholder-color)]" />
+          </div>
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            className="w-full sm:w-60 px-3 py-2 outline-none text-[var(--black-color)] text-[14px] placeholder:text-[var(--placeholder-color)] bg-transparent"
+          />
+          <button className="w-full sm:w-auto bg-[var(--primary-color)] text-white px-5 py-2.5 sm:py-3 mt-1 sm:mt-0 rounded cursor-pointer text-sm sm:text-base">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Banner;
